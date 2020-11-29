@@ -24,7 +24,7 @@ class CopyPkgJsonPlugin {
       : path.resolve(process.cwd(), 'package.json')
 
     try {
-      compiler.inputFileSystem._statSync(root)
+      compiler.inputFileSystem.statSync(root)
       pkgJson = JSON.parse(JSON.stringify(require(root)))
     } catch (e) {
       if (options.hasOwnProperty('new')) pkgJson = {}
